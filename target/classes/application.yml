@@ -1,0 +1,24 @@
+app:
+  name: transaction-processor
+spring:
+#  profiles:
+#    active: dev
+  http:
+    multipart:
+    max-file-size: 2MB
+    max-request-size: 2MB
+    enabled: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+server:
+  port: 8081
+jwt:
+  header: Authorization
+  expires_in: 10000
+  secret: 12secreT1
+  temp_expires_in: 300
